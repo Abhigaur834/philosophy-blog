@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just Unorthodox Philosophy — Ideas Worth Sitting With</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Essays on ideas that don't sit still — philosophy, questions, and reflections for curious minds.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Just Unorthodox Philosophy">
+  <meta property="og:description" content="Essays on ideas that don't sit still.">
+  <meta property="og:image" content="favicon.svg">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div>
+        <a class="site-title" href="index.html">Just Unorthodox Philosophy</a>
+        <div class="site-tagline">Essays on ideas that don't sit still</div>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <div id="post-list" aria-live="polite"></div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">&copy; 2026 Abhishek Gaur &middot; hosted on GitHub Pages</div>
+  </footer>
+  <script>
+    fetch('posts.json')
+      .then(function (res) {
+        if (!res.ok) throw new Error('Could not load posts');
+        return res.json();
+      })
+      .then(function (posts) {
+        var container = document.getElementById('post-list');
+        posts.forEach(function (post) {
+          var el = document.createElement('article');
+          el.className = 'post-preview';
+          el.innerHTML =
+            '<h2><a href="' + post.url + '">' + post.title + '</a></h2>' +
+            '<div class="post-meta">' + post.date + '</div>' +
+            '<p class="post-excerpt">' + post.excerpt + '</p>' +
+            '<a class="read-more" href="' + post.url + '">Read more &rarr;</a>';
+          container.appendChild(el);
+        });
+        if (posts.length === 0) {
+          container.innerHTML = '<p>Nothing here yet. First post coming soon.</p>';
+        }
+      })
+      .catch(function () {
+        document.getElementById('post-list').innerHTML = '<p class="load-error">The essays could not be loaded right now. Please refresh and try again.</p>';
+      });
+  </script>
+</body>
+</html>
