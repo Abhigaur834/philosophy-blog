@@ -82,3 +82,14 @@ html.dark .newsletter{border-color:#2b2d2d;background:#151717}
 html.dark .hero-image:after{background:linear-gradient(90deg,#101111 0%,rgba(16,17,17,.94) 12%,rgba(16,17,17,.50) 32%,rgba(16,17,17,.08) 58%,transparent 72%)!important}
 @media(max-width:900px){.hero-banner,.hero-inner{min-height:400px!important}.hero-copy{padding:40px 0!important}.hero-image{width:54%!important}}
 @media(max-width:650px){.hero-banner,.hero-inner{min-height:500px!important}.hero-copy{padding:38px 0 10px!important}.hero-image{width:100%!important;height:58%!important;top:auto!important;bottom:0!important}.hero-image:after{background:linear-gradient(180deg,var(--hero) 0%,rgba(245,237,226,.70) 28%,transparent 82%)!important}html.dark .hero-image:after{background:linear-gradient(180deg,#101111 0%,rgba(16,17,17,.72) 28%,transparent 82%)!important}}
+
+
+/* Dark-mode hero: keep the photograph visible on the right */
+html.dark .hero-image{opacity:1!important}
+html.dark .hero-image img{opacity:1!important;filter:brightness(.82) saturate(.78) contrast(1.06)!important}
+html.dark .hero-image:after{background:linear-gradient(90deg,#101111 0%,rgba(16,17,17,.96) 7%,rgba(16,17,17,.72) 22%,rgba(16,17,17,.28) 42%,rgba(16,17,17,.06) 58%,transparent 72%)!important;z-index:2}
+html.dark .hero-image{z-index:1}
+html.dark .hero-copy{position:relative;z-index:3}
+@media(max-width:650px){
+  html.dark .hero-image:after{background:linear-gradient(180deg,#101111 0%,rgba(16,17,17,.78) 24%,rgba(16,17,17,.22) 62%,transparent 100%)!important}
+}
