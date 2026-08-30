@@ -126,3 +126,14 @@ html.dark .hero-image:after{background:linear-gradient(90deg,#101111 0%,rgba(16,
 .article-cover img{width:100%!important;height:auto!important;max-height:720px!important;object-fit:contain!important;object-position:center!important;display:block!important;transform:none!important}
 @media(max-width:900px){.article-cover img{max-height:600px!important}}
 @media(max-width:650px){.article-cover img{max-height:none!important}.article-cover{border-radius:10px!important}}
+
+
+/* Editorial article cover: wide frame, full image, no distortion */
+.article-cover{height:500px!important;position:relative;display:grid!important;place-items:center!important;overflow:hidden!important;background:#171717!important}
+.article-cover:before{content:"";position:absolute;inset:-35px;background:var(--article-cover-bg,linear-gradient(135deg,#242424,#111));filter:blur(24px);transform:scale(1.08);opacity:.9}
+.article-cover img{position:relative!important;z-index:1!important;width:auto!important;height:100%!important;max-width:78%!important;max-height:100%!important;object-fit:contain!important;object-position:center!important;display:block!important;transform:none!important;box-shadow:0 12px 34px rgba(0,0,0,.24)}
+.article{width:min(900px,calc(100% - 40px))!important}
+.article-body{max-width:720px!important;margin:0 auto!important;font-size:20px!important;line-height:1.8!important}
+.article-cover + .article-body{margin-top:8px!important}
+@media(max-width:900px){.article-cover{height:460px!important}.article-cover img{max-width:82%!important}}
+@media(max-width:650px){.article{width:calc(100% - 30px)!important}.article-cover{height:auto!important;min-height:300px!important;padding:20px!important}.article-cover img{max-width:100%!important;height:auto!important;max-height:520px!important}.article-body{font-size:18px!important;line-height:1.75!important}}
