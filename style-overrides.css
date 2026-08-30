@@ -137,3 +137,18 @@ html.dark .hero-image:after{background:linear-gradient(90deg,#101111 0%,rgba(16,
 .article-cover + .article-body{margin-top:8px!important}
 @media(max-width:900px){.article-cover{height:460px!important}.article-cover img{max-width:82%!important}}
 @media(max-width:650px){.article{width:calc(100% - 30px)!important}.article-cover{height:auto!important;min-height:300px!important;padding:20px!important}.article-cover img{max-width:100%!important;height:auto!important;max-height:520px!important}.article-body{font-size:18px!important;line-height:1.75!important}}
+
+
+/* Small, resonant essay thumbnails */
+.post-preview{grid-template-columns:210px minmax(0,1fr)!important;gap:28px!important;align-items:start}
+.post-preview.featured{grid-template-columns:210px minmax(0,1fr)!important}
+.post-image,.post-preview.featured .post-image{width:210px!important;height:148px!important;border-radius:8px!important}
+.post-image img{object-fit:cover!important;object-position:center!important}
+@media(max-width:900px){
+  .post-preview,.post-preview.featured{grid-template-columns:190px minmax(0,1fr)!important}
+  .post-image,.post-preview.featured .post-image{width:190px!important;height:135px!important}
+}
+@media(max-width:650px){
+  .post-preview,.post-preview.featured{grid-template-columns:1fr!important}
+  .post-image,.post-preview.featured .post-image{width:100%!important;height:210px!important}
+}
