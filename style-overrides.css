@@ -3,3 +3,50 @@
 .site-header{padding:7px 0}.logo{width:58px;height:58px;flex-basis:58px}.site-title{font-size:27px}.site-title-sub{font-size:16px;margin-top:3px}.site-tagline{font-size:13px;margin-top:3px}.site-nav{gap:22px}.hero-inner{min-height:285px}.hero-copy{padding:30px 0}.hero-copy h1{font-size:clamp(46px,4.7vw,62px);margin:12px 0}.hero-copy p{font-size:17px;margin-bottom:18px}.hero-image{width:40%;height:86%;top:auto;bottom:0}.hero-image img{object-position:center center}.hero-image:after{background:linear-gradient(90deg,var(--hero) 0%,rgba(245,237,226,.65) 20%,transparent 55%)}.essay-area{padding-top:38px}
 @media(max-width:900px){.site-header{padding:7px 0}.logo{width:54px;height:54px;flex-basis:54px}.site-title{font-size:24px}.site-title-sub{font-size:15px}.hero-inner{min-height:290px}.hero-copy{padding:32px 0}.hero-image{width:44%;height:82%}.site-nav{gap:16px}.section-intro{grid-template-columns:1fr;gap:12px}.post-preview.featured{grid-template-columns:1fr}.post-preview.featured .post-image{height:300px}.editorial-page{padding:55px 0 80px}.note-grid,.start-grid{grid-template-columns:1fr}.article-body{font-size:19px}.notebook-teaser{align-items:start;flex-direction:column}}
 @media(max-width:560px){.site-header{padding:6px 0}.logo{width:50px;height:50px;flex-basis:50px}.site-nav{font-size:13px;gap:12px}.icon-button{width:40px;height:40px}.hero-inner{min-height:350px}.hero-copy{padding:34px 0}.hero-copy h1{font-size:45px}.hero-image{width:100%;height:48%;opacity:.55}.hero-image:after{background:linear-gradient(180deg,var(--hero) 0%,rgba(245,237,226,.25) 48%,transparent 78%)}.essay-area{padding-top:34px}.section-intro h2{font-size:34px}.post-preview.featured h2{font-size:36px}.article-page{padding:40px 17px 70px}.article h1{font-size:44px}.article-deck{font-size:18px}.article-body{font-size:18px}.article-body blockquote{font-size:23px}.article-nav{flex-direction:column}.editorial-page{padding:45px 17px 70px}.question-list strong{font-size:24px}.footer-inner{flex-direction:column}.site-nav a:nth-child(2),.site-nav a:nth-child(3){display:none}.start-here{margin-top:50px}}
+
+
+/* Philosophical editorial homepage */
+html.dark .hero-banner,html.dark .essay-area{background:#101111}
+html.dark .site-header{background:rgba(15,16,16,.92);border-color:#2b2d2d}
+html.dark .hero-banner{border-color:#2b2d2d}
+.hero-banner{min-height:470px}
+.hero-inner{min-height:470px}
+.hero-copy{width:55%;padding:62px 0}
+.hero-copy .kicker{font-family:var(--serif);font-size:17px;font-style:italic;letter-spacing:.09em;text-transform:none}
+.hero-copy h1{font-size:clamp(50px,5.4vw,76px);line-height:.96;letter-spacing:-.055em;max-width:720px;margin:18px 0 24px}
+.hero-copy p{font-size:20px;line-height:1.55;max-width:570px}
+.hero-button{border-radius:3px;padding:13px 19px;font-family:var(--sans);letter-spacing:.01em}
+.hero-image{width:57%;height:100%;right:0}
+.hero-image img{object-position:center center;filter:grayscale(.15) saturate(.78) contrast(1.03)}
+.hero-image:after{background:linear-gradient(90deg,var(--hero) 0%,color-mix(in srgb,var(--hero) 92%,transparent) 16%,color-mix(in srgb,var(--hero) 58%,transparent) 38%,transparent 67%),linear-gradient(0deg,rgba(0,0,0,.18),transparent 45%)}
+.section-intro{grid-template-columns:1fr 460px;gap:70px}
+.section-intro h2{font-size:clamp(38px,4.2vw,56px)}
+.section-intro p{font-size:18px;line-height:1.65}
+.toolbar{border-top:1px solid var(--border);padding-top:20px}
+.filters{gap:26px}
+.filter{font-size:15px}
+.post-preview{background:transparent;border-color:var(--border)}
+.post-preview h2{font-size:31px}
+.post-preview p{font-size:16px;line-height:1.65}
+.start-here{padding:55px 0;margin-top:65px}
+.start-here h2{max-width:760px;font-size:clamp(34px,4vw,50px)}
+.start-grid strong{font-size:21px;line-height:1.35}
+.notebook-teaser{border-bottom:1px solid var(--border)}
+.newsletter{background:transparent}
+html.dark .newsletter{border-color:#2b2d2d;background:#151717}
+@media(max-width:900px){
+ .hero-banner,.hero-inner{min-height:430px}
+ .hero-copy{width:60%;padding:52px 0}
+ .hero-image{width:66%}
+ .section-intro{grid-template-columns:1fr;gap:15px}
+}
+@media(max-width:650px){
+ .hero-banner,.hero-inner{min-height:520px}
+ .hero-copy{width:100%;padding:42px 0 0}
+ .hero-copy h1{font-size:48px}
+ .hero-copy p{font-size:18px}
+ .hero-image{width:100%;height:63%;opacity:.58}
+ .hero-image:after{background:linear-gradient(180deg,var(--hero) 0%,rgba(16,17,17,.78) 26%,rgba(16,17,17,.18) 78%,transparent 100%)}
+ .hero-button{padding:12px 17px}
+ .filters{gap:18px}
+}
