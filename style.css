@@ -1,0 +1,37 @@
+:root {
+  --brand: #000000;
+  --brand-hover: #444444;
+  --text: #111111;
+  --text-muted: #666666;
+  --bg: #ffffff;
+  --border: #dddddd;
+  --serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--serif); line-height: 1.7; }
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+header.site-header { border-bottom: 1px solid var(--border); padding: 24px 0; margin-bottom: 40px; }
+header.site-header .wrap { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; }
+.site-title { font-weight: 600; font-size: 20px; letter-spacing: .02em; color: var(--brand); text-decoration: none; }
+.site-tagline { font-size: 14px; font-style: italic; color: var(--text-muted); margin-top: 4px; }
+nav.site-nav a { color: var(--text); text-decoration: none; font-size: 15px; margin-left: 20px; }
+nav.site-nav a:hover, a:hover { color: var(--brand-hover); }
+main { min-height: 50vh; }
+a { color: var(--brand); }
+.post-preview { border-bottom: 1px solid var(--border); padding-bottom: 28px; margin-bottom: 28px; }
+.post-preview h2 { margin: 0 0 4px; font-size: 24px; }
+.post-preview h2 a { text-decoration: none; color: var(--text); }
+.post-meta { font-size: 13px; font-style: italic; color: var(--text-muted); margin-bottom: 12px; }
+.post-excerpt { color: var(--text); }
+.read-more { display: inline-block; margin-top: 8px; font-size: 14px; }
+article.post h1 { font-size: 30px; margin-bottom: 4px; }
+article.post .post-meta { margin-bottom: 32px; }
+article.post p { margin-bottom: 1.4em; font-size: 18px; }
+blockquote { border-left: 3px solid var(--brand); margin-left: 0; padding-left: 18px; color: var(--text-muted); font-style: italic; }
+.back-link { display: inline-block; margin-top: 40px; font-size: 14px; }
+.contact { margin-top: 42px; padding-top: 24px; border-top: 1px solid var(--border); }
+.contact h2 { font-size: 22px; }
+footer.site-footer { border-top: 1px solid var(--border); margin-top: 60px; padding: 20px 0 40px; font-size: 13px; color: var(--text-muted); text-align: center; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+.load-error { margin-top: 1.5rem; padding: 1rem 1.1rem; border: 1px solid currentColor; border-radius: 8px; }
+@media (max-width: 560px) { .wrap { padding: 0 18px; } header.site-header .wrap { align-items: flex-start; } .site-title { font-size: 18px; } article.post p { font-size: 17px; } }
