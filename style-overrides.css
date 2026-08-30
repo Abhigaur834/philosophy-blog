@@ -119,3 +119,10 @@ html.dark .hero-image:after{background:linear-gradient(90deg,#101111 0%,rgba(16,
 .hero-copy{z-index:3}
 @media(max-width:900px){.hero-visual{width:50%;opacity:.9}}
 @media(max-width:650px){.hero-visual{width:100%;height:58%;top:auto;bottom:0;opacity:.7}.thought-symbol{right:34%;top:24%;font-size:170px}}
+
+
+/* Article images: show full artwork without forced zoom/crop */
+.article-cover{height:auto!important;max-height:none!important;display:block!important;background:var(--hero)!important}
+.article-cover img{width:100%!important;height:auto!important;max-height:720px!important;object-fit:contain!important;object-position:center!important;display:block!important;transform:none!important}
+@media(max-width:900px){.article-cover img{max-height:600px!important}}
+@media(max-width:650px){.article-cover img{max-height:none!important}.article-cover{border-radius:10px!important}}
