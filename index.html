@@ -7,7 +7,7 @@
   <meta name="description" content="Essays on ideas that don't sit still — philosophy, questions, and reflections for curious minds.">
   <meta property="og:type" content="website"><meta property="og:title" content="Just Unorthodox Philosophy"><meta property="og:description" content="Ideas worth sitting with.">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=4">
   <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
 <body>
@@ -32,7 +32,7 @@
   var list=document.getElementById('post-list'), search=document.getElementById('search'), all=[], topic='All';
   function render(items){list.innerHTML='';if(!items.length){list.innerHTML='<p class="empty">No essays match your search.</p>';return}items.forEach(function(post){var tags=post.tags||[];var el=document.createElement('article');el.className='post-preview';el.innerHTML='<div class="post-image"><div class="path"></div></div><div class="post-content"><div class="post-topic">'+(tags[0]||'REFLECTION')+'</div><h2><a href="'+post.url+'">'+post.title+'</a></h2><div class="post-meta">'+post.date+' · '+(post.readingTime||'4 min read')+'</div><p>'+post.excerpt+'</p><a class="read-more" href="'+post.url+'">Read more →</a></div>';list.appendChild(el)})}
   function apply(){var q=search.value.toLowerCase().trim();render(all.filter(function(p){var text=(p.title+' '+p.excerpt+' '+(p.tags||[]).join(' ')).toLowerCase();var topicOK=topic==='All'||(p.tags||[]).map(String).map(function(x){return x.toLowerCase()}).indexOf(topic.toLowerCase())>-1;return topicOK&&text.indexOf(q)>-1}))}
-  fetch('posts.json').then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(posts){all=posts;apply()}).catch(function(){list.innerHTML='<p class="load-error">The essays could not be loaded right now. Please refresh and try again.</p>'});
+  fetch('posts.json?v=2').then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(posts){all=posts;apply()}).catch(function(){list.innerHTML='<p class="load-error">The essays could not be loaded right now. Please refresh and try again.</p>'});
   search.addEventListener('input',apply);document.querySelectorAll('.filter').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.filter').forEach(function(b){b.classList.remove('active')});this.classList.add('active');topic=this.dataset.topic;apply()})});
   document.getElementById('theme-toggle').addEventListener('click',function(){var dark=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',dark?'dark':'light')}catch(e){}});
   document.getElementById('newsletter-form').addEventListener('submit',function(e){e.preventDefault();var b=this.querySelector('button');b.textContent='Thank you ✓';b.disabled=true;});
