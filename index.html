@@ -4,59 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Just Unorthodox Philosophy — Ideas Worth Sitting With</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#111827">
   <meta name="description" content="Essays on ideas that don't sit still — philosophy, questions, and reflections for curious minds.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Just Unorthodox Philosophy">
-  <meta property="og:description" content="Essays on ideas that don't sit still.">
-  <meta property="og:image" content="favicon.svg">
+  <meta property="og:type" content="website"><meta property="og:title" content="Just Unorthodox Philosophy"><meta property="og:description" content="Ideas worth sitting with.">
   <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <div>
-        <a class="site-title" href="index.html">Just Unorthodox Philosophy</a>
-        <div class="site-tagline">Essays on ideas that don't sit still</div>
-      </div>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-  <main class="wrap">
-    <div id="post-list" aria-live="polite"></div>
-  </main>
-  <footer class="site-footer">
-    <div class="wrap">&copy; 2026 Abhishek Gaur &middot; hosted on GitHub Pages</div>
-  </footer>
-  <script>
-    fetch('posts.json')
-      .then(function (res) {
-        if (!res.ok) throw new Error('Could not load posts');
-        return res.json();
-      })
-      .then(function (posts) {
-        var container = document.getElementById('post-list');
-        posts.forEach(function (post) {
-          var el = document.createElement('article');
-          el.className = 'post-preview';
-          el.innerHTML =
-            '<h2><a href="' + post.url + '">' + post.title + '</a></h2>' +
-            '<div class="post-meta">' + post.date + '</div>' +
-            '<p class="post-excerpt">' + post.excerpt + '</p>' +
-            '<a class="read-more" href="' + post.url + '">Read more &rarr;</a>';
-          container.appendChild(el);
-        });
-        if (posts.length === 0) {
-          container.innerHTML = '<p>Nothing here yet. First post coming soon.</p>';
-        }
-      })
-      .catch(function () {
-        document.getElementById('post-list').innerHTML = '<p class="load-error">The essays could not be loaded right now. Please refresh and try again.</p>';
-      });
-  </script>
-</body>
-</html>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="index.html"><span class="site-title">Just Unorthodox Philosophy</span><span class="site-tagline">Essays on ideas that don't sit still</span></a>
+  <nav class="site-nav" aria-label="Main navigation"><a href="#essays">Essays</a><a href="about.html">About</a><button class="icon-button" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button></nav>
+</div></header>
+<main class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <div><div class="kicker">A notebook of questions</div><h1 id="hero-title">Think slower.<br>Question better.</h1><p>A quiet corner for ideas, doubts, contradictions, and the questions that refuse to leave us alone.</p></div>
+    <div class="hero-note"><strong>Not a syllabus.</strong>Not answers carved in stone. Just honest attempts to understand what it means to be human.</div>
+  </section>
+  <div class="content-grid" id="essays">
+    <section><div class="section-heading"><h2>Latest essays</h2><input id="search" class="search" type="search" placeholder="Search essays…" aria-label="Search essays"></div><div id="post-list" aria-live="polite"></div></section>
+    <aside><div class="topics"><h3>Explore by topic</h3><div class="topic-list"><span class="topic">Life</span><span class="topic">Mind</span><span class="topic">Meaning</span><span class="topic">Society</span><span class="topic">Doubt</span><span class="topic">Existence</span></div></div><div class="quote">“The important thing is not to stop questioning.”</div></aside>
+  </div>
+</main>
+<footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Abhishek Gaur · Just Unorthodox Philosophy</span><a href="https://github.com/Abhigaur834/philosophy-blog">View on GitHub</a></div></footer>
+<script>
+(function(){
+  var list=document.getElementById('post-list'), search=document.getElementById('search'), all=[];
+  function render(items){list.innerHTML=''; if(!items.length){list.innerHTML='<p class="empty">No essays match that search.</p>';return} items.forEach(function(post){var el=document.createElement('article');el.className='post-preview';el.innerHTML='<div><h3><a href="'+post.url+'">'+post.title+'</a></h3><div class="post-meta">'+post.date+' · '+(post.readingTime||'3 min read')+'</div></div><a class="read-more" href="'+post.url+'">Read essay →</a><p class="post-excerpt">'+post.excerpt+'</p>';list.appendChild(el)})}
+  fetch('posts.json').then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(posts){all=posts;render(all)}).catch(function(){list.innerHTML='<p class="load-error">The essays could not be loaded right now. Please refresh and try again.</p>'});
+  search.addEventListener('input',function(){var q=this.value.toLowerCase().trim();render(all.filter(function(p){return (p.title+' '+p.excerpt+' '+(p.tags||[]).join(' ')).toLowerCase().indexOf(q)>-1}))});
+  document.getElementById('theme-toggle').addEventListener('click',function(){var dark=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',dark?'dark':'light')}catch(e){}});
+})();
+</script>
+</body></html>
