@@ -6,5 +6,21 @@
     "excerpt": "Every blog starts with some version of the same confession: I've meant to write this for a while, and I'm still not sure I have anything new to say. I'm starting anyway.",
     "readingTime": "3 min read",
     "tags": ["Life", "Doubt", "Meaning"]
+  },
+  {
+    "title": "Understanding Emotional Loyalty and Its Consequences",
+    "date": "August 30, 2026",
+    "url": "posts/emotional-loyalty.html",
+    "excerpt": "On attachment, silence, and the strange loyalty we feel toward people who have already left our lives.",
+    "readingTime": "5 min read",
+    "tags": ["Love", "Relationships", "Loss"]
+  },
+  {
+    "title": "Embracing the Mystery of Life: Breaking Free from the Daily Grind",
+    "date": "August 30, 2026",
+    "url": "posts/embracing-mystery.html",
+    "excerpt": "A reflection on routine, responsibility, convention, and the courage to search for meaning beyond the daily grind.",
+    "readingTime": "6 min read",
+    "tags": ["Life", "Meaning", "Purpose"]
   }
 ]
