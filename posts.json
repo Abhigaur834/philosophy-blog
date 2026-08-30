@@ -7,7 +7,7 @@
     "readingTime": "3 min read",
     "tags": ["Life", "Doubt", "Meaning"],
     "cover": "path",
-    "image": "assets/starting-path.svg"
+    "image": "https://images.unsplash.com/photo-1784715595797-848de7822f28?auto=format&fit=crop&w=1400&q=82"
   },
   {
     "title": "Understanding Emotional Loyalty and Its Consequences",
@@ -17,7 +17,7 @@
     "readingTime": "5 min read",
     "tags": ["Love", "Relationships", "Loss"],
     "cover": "room",
-    "image": "assets/room-figure.svg"
+    "image": "https://images.unsplash.com/photo-1780412763450-93a0979f0857?auto=format&fit=crop&w=1400&q=82"
   },
   {
     "title": "Embracing the Mystery of Life: Breaking Free from the Daily Grind",
@@ -27,6 +27,6 @@
     "readingTime": "6 min read",
     "tags": ["Life", "Meaning", "Purpose"],
     "cover": "stars",
-    "image": "assets/starry-reflection.svg"
+    "image": "https://images.unsplash.com/photo-1778704839167-7a45dfda9c6b?auto=format&fit=crop&w=1400&q=82"
   }
 ]
