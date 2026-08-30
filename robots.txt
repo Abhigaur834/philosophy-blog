@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abhigaur834.github.io/philosophy-blog/sitemap.xml
